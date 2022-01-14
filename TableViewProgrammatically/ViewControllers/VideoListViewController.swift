@@ -43,9 +43,10 @@ class VideoListViewController: UIViewController {
     
     private func setButtonConfiguration() {
         self.animationButton.translatesAutoresizingMaskIntoConstraints = false
-        self.animationButton.setImage(UIImage(systemName: "wifi"), for: .normal)
+        self.animationButton.setTitle("TAP - ME", for: .normal)
+        self.animationButton.titleLabel?.font                          = .systemFont(ofSize: 30, weight: .bold)
         self.animationButton.clipsToBounds                             = true
-        self.animationButton.tintColor                                 = .systemIndigo
+        self.animationButton.setTitleColor(.red, for: .normal)
         self.animationButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
     }
     
@@ -58,7 +59,7 @@ class VideoListViewController: UIViewController {
         self.animationButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -40).isActive = true
         self.animationButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive              = true
         self.animationButton.heightAnchor.constraint(equalToConstant: 60).isActive                            = true
-        self.animationButton.widthAnchor.constraint(equalToConstant: 60).isActive                             = true
+        self.animationButton.widthAnchor.constraint(equalToConstant: 150).isActive                             = true
     }
     
     private func configureAnimationButton() {
